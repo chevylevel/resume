@@ -18,7 +18,7 @@ export const categories = [
             { year: 2020, text: "Started to work in main web-site team" },
             { year: 2021, text: "Developing storybook components for new design system" },
             { year: 2022, text: "User profile page redesign implementation" },
-            { year: 2023, text: "introduced GraphQL for profile / b2b section" },
+            { year: 2023, text: "Introduced GraphQL for profile / b2b section" },
         ],
     },
 ]
