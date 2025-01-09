@@ -13,7 +13,7 @@ const PageContainer = () => {
     const [currentSection, setCurrentSection] = useState(0);
     const [isPending, setIsPending] = useState(false);
 
-    const headerNode = <span>Исторические<br />даты</span>
+    const headerNode = <span>Sergey Nekrasov<br />Frontend-developer</span>
 
     const wheelNode = (
         <Wheel

@@ -21,7 +21,7 @@ const yearsStyles = () => css`
         left: 49%;
         transform: translate(-50%, -50%);
         font-family: PT Sans;
-        font-size: 200px;
+        font-size: 180px;
         font-weight: 700;
         line-height: 160px;
         letter-spacing: -0.02em;

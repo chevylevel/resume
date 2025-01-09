@@ -1,6 +1,7 @@
-import { useRef, useState } from 'react';
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
+import { useEffect, useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
+import { Swiper as SwiperCore } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -22,10 +23,17 @@ interface SliderProps {
 const Slider = ({
     events,
 }: SliderProps) => {
+    const swiperRef = useRef<SwiperCore | null>(null);
     const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
     const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
     const [isBeginning, setIsBeginning] = useState<boolean>(true);
     const [isEnd, setIsEnd] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (swiperRef.current) {
+            swiperRef.current.slideTo(0);
+        }
+    }, [events]);
 
     return (
         <StyledSlider>
@@ -37,6 +45,7 @@ const Slider = ({
                     prevEl,
                     nextEl,
                 }}
+                onSwiper={(swiperInstance) => (swiperRef.current = swiperInstance)}
                 onSlideChange={(swiper) => {
                     setIsBeginning(swiper.isBeginning);
                     setIsEnd(swiper.isEnd);
@@ -53,8 +62,8 @@ const Slider = ({
                     }
                 }}
             >
-                {events.map(({ year, text }) => (
-                    <SwiperSlide key={year}>
+                {events.map(({ year, text }, i) => (
+                    <SwiperSlide key={i}>
                         <Slide
                             title={year.toString()}
                             content={text}

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const wheelStyles = () => css`
-    --circle-diameter: 47%;
+    --circle-diameter: 35%;
     position: absolute;
     width: var(--circle-diameter);
     aspect-ratio: 1 / 1;
