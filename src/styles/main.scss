@@ -12,8 +12,14 @@ body {
   padding: 0;
   background-color: #F4F5F9;
   max-width: 1920px;
+  position: relative;
+  min-height: 100%;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  height: 100%;
 }
