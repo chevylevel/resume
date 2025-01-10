@@ -3,6 +3,7 @@ import { breakpoints } from '../../../shared/constants/breakpoints';
 
 const headerStyles = () => css`
     font-family: PT Sans;
+    color: #42567A;
     font-size: 20px;
     font-weight: 700;
     line-height: 24px;
@@ -16,7 +17,6 @@ const headerStyles = () => css`
         border-image-source: linear-gradient(180deg, #3877EE -5%, #EF5DA8 85%);
         border-image-slice: 1;
         max-height: fit-content;
-        color: #42567A;
         margin-left: -1px;
         margin-top: 0;
     }
